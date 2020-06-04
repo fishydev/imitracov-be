@@ -27,11 +27,12 @@ exports.getData = async(param) => {
                 data:kota ?kota;
                 data:kecamatan ?kecamatan;
                 data:alamat ?alamat;
+        FILTER regex(?nik, "${param.nik ? param.nik : ''}", "i")
         }`
     }
 
     try {
-        const { data } = await axios(`${BASE_URL}/imitracov/query`, {
+        const { data } = await axios(`${BASE_URL}imitracov/query`, {
             method: 'POST',
             headers,
             data: qs.stringify(queryData)

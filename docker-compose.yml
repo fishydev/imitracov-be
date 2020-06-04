@@ -1,0 +1,19 @@
+version: "3.7"
+services: 
+    semweb-service:
+        container_name: semweb-service
+        restart: always
+        build: ./
+        ports: 
+            - "3000:3000"
+        volumes:
+            - .:/app
+            - /app/node_modules
+        env_file: .env
+        networks:
+            - semweb-service-network
+
+networks:
+    semweb-service-network:
+        name: semweb-service-network
+    

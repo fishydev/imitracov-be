@@ -1,6 +1,6 @@
 const axios = require('axios')
 const qs = require('qs')
-const BASE_URL = process.env.BASE_URL_FUSEKI;
+const BASE_URL = 'http://qrary-fuseki-service.herokuapp.com/';
 
 const headers = {
     'Accept': 'application/sparql-results+json,*/*;q=0.9',

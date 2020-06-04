@@ -31,7 +31,7 @@ module.exports = {
                     success: true,
                     status: 200,
                     data: patients,
-                    message: 'All patients data retireved'
+                    message: 'All patients data retrieved'
                 })
             }
 
@@ -39,7 +39,7 @@ module.exports = {
             return res.status(200).json({
                 success: false,
                 status: 200,
-                data: '',
+                data: res,
                 message: `Error: ${err.message}`
             })
         }

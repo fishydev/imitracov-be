@@ -1,0 +1,119 @@
+@prefix data: <http://example.com> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+data:1 rdf:type data:patient;
+	data:nik "91284211";
+	data:nama "Dewain McTague";
+	data:lahir "1/7/1995";
+	data:asalBerangkat "China";
+	data:tglPulang "4/27/2020";
+	data:provinsi "Jawa Barat";
+	data:kota "Bandung";
+	data:kecamatan "Margahayu";
+	data:alamat "Jl. Mayuharga No. 2";
+    data:status "ODP";
+    .
+
+data:2 rdf:type data:patient;
+	data:nik "91284212";
+	data:nama "Murielle Cannell";
+	data:lahir "9/1/1988";
+	data:asalBerangkat "Malaysia";
+	data:tglPulang "03-05-2020";
+	data:provinsi "Sumatera Utara";
+	data:kota "Medan";
+	data:kecamatan "Medan Permai";
+	data:alamat "Jl. Sempurna Ujung No. 1";
+    data:status "Positif";
+    .
+	
+data:3 rdf:type data:patient;
+	data:nik "91284213";
+	data:nama "Wynnie McShirrie";
+	data:lahir "5/24/1978";
+	data:asalBerangkat "China";
+	data:tglPulang "4/22/2020";
+	data:provinsi "Sumatera Barat";
+	data:kota "Padang";
+	data:kecamatan "Padang Utara";
+	data:alamat "Jl. Pramuka Raya No. 3";
+    data:status "Negatif";
+    .
+	
+data:4 rdf:type data:patient;
+	data:nik "91284214";
+	data:nama "Davis Sarney";
+	data:lahir "10/14/1985";
+	data:asalBerangkat "Philippines";
+	data:tglPulang "4/21/2020";
+	data:provinsi "Jawa Barat";
+	data:kota "Bandung";
+	data:kecamatan "Margahayu";
+	data:alamat "Jl. Mayuharga No. 4";
+    data:status "PDP";
+    .
+	
+data:5 rdf:type data:patient;
+	data:nik "91284215";
+	data:nama "Sly Southcombe";
+	data:lahir "9/27/1971";
+	data:asalBerangkat "Italy";
+	data:tglPulang "4/6/2020";
+	data:provinsi "Sumatera Utara";
+	data:kota "Medan";
+	data:kecamatan "Medan Permai";
+	data:alamat "Jl. Sempurna Ujung No. 2";
+    data:status "ODP";
+    .
+
+data:6 rdf:type data:patient;
+	data:nik "91284216";
+	data:nama "Reeta Punton";
+	data:lahir "10/9/1992";
+	data:asalBerangkat "Argentina";
+	data:tglPulang "4/13/2020";
+	data:provinsi "Sumatera Barat";
+	data:kota "Padang";
+	data:kecamatan "Padang Utara";
+	data:alamat "Jl. Pramuka Raya No. 3";
+    data:status "Positif";
+    .
+
+data:7 rdf:type data:patient;
+	data:nik "91284217";
+	data:nama "Rodger Martinet";
+	data:lahir "12/18/1997";
+	data:asalBerangkat "Malaysia";
+	data:tglPulang "4/29/2020";
+	data:provinsi "Jawa Barat";
+	data:kota "Bandung";
+	data:kecamatan "Margahayu";
+	data:alamat "Jl. Mayuharga No. 6";
+    data:status "Negatif";
+    .
+
+data:8 rdf:type data:patient;
+	data:nik "91284218";
+	data:nama "Freeland Martin";
+	data:lahir "7/8/1992";
+	data:asalBerangkat "China";
+	data:tglPulang "4/9/2020";
+	data:provinsi "Sumatera Utara";
+	data:kota "Medan";
+	data:kecamatan "Medan Permai";
+	data:alamat "Jl. Sempurna Ujung No. 3";
+    data:status "PDP";
+    .
+
+data:9 rdf:type data:patient;
+	data:nik "91284219";
+	data:nama "Dreddy Park";
+	data:lahir "10/10/1985";
+	data:asalBerangkat "Italy";
+	data:tglPulang "03-05-2020";
+	data:provinsi "Sumatera Barat";
+	data:kota "Padang";
+	data:kecamatan "Padang Utara";
+	data:alamat "Jl. Pramuka Raya No. 3";
+    data:status "PDP";
+    .

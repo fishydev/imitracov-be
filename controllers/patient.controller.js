@@ -27,19 +27,14 @@ module.exports = {
                     message: patient.length ? 'Patient found' : 'Patient not found'
                 })
             } else {
-                return res.status(200).json({
-                    success: true,
-                    status: 200,
-                    data: patients,
-                    message: 'All patients data retrieved'
-                })
+                return res.status(200).send(patients)
             }
 
         } catch (err) {
             return res.status(200).json({
                 success: false,
                 status: 200,
-                data: res,
+                data: '',
                 message: `Error: ${err.message}`
             })
         }

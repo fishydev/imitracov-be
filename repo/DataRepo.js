@@ -13,7 +13,7 @@ exports.getData = async(param) => {
         query: `PREFIX data: <http://example.com>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         
-        SELECT ?nik ?nama ?lahir ?asalBerangkat ?tglBerangkat ?tglPulang ?provinsi ?kota ?kecamatan ?alamat
+        SELECT ?nik ?nama ?lahir ?asalBerangkat ?tglPulang ?provinsi ?kota ?kecamatan ?alamat ?status
         
         WHERE {
             ?any rdf:type data:patient;
@@ -21,13 +21,12 @@ exports.getData = async(param) => {
                 data:nama ?nama;
                 data:lahir ?lahir;
                 data:asalBerangkat ?asalBerangkat;
-                data:tglBerangkat ?tglBerangkat;
                 data:tglPulang ?tglPulang;
                 data:provinsi ?provinsi;
                 data:kota ?kota;
                 data:kecamatan ?kecamatan;
                 data:alamat ?alamat;
-        FILTER regex(?nik, "${param.nik ? param.nik : ''}", "i")
+                data:status ?status;
         }`
     }
 

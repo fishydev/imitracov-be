@@ -27,6 +27,8 @@ exports.getData = async(param) => {
                 data:kecamatan ?kecamatan;
                 data:alamat ?alamat;
                 data:status ?status;
+            
+            FILTER regex(?nik, "${param.nik ? param.nik : ''}", "i")
         }`
     }
 
@@ -35,6 +37,64 @@ exports.getData = async(param) => {
             method: 'POST',
             headers,
             data: qs.stringify(queryData)
+        });
+        
+        return data.results;
+    } catch (err) {
+        return Promise.reject(err);
+    }
+}
+
+exports.getDataGuest = async(param) => {
+    const queryDataGuest = {
+        query: `PREFIX data: <http://example.com>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+        SELECT ?asalBerangkat (COUNT(*) AS ?jumlah)
+
+        WHERE {
+            ?any rdf:type data:patient;
+            data:asalBerangkat ?asalBerangkat;
+            data:status '${param.status}';
+        }
+        GROUP BY ?asalBerangkat
+        `
+    }
+
+    try {
+        const { data } = await axios(`${BASE_URL}imitracov/query`, {
+            method: 'POST',
+            headers,
+            data: qs.stringify(queryDataGuest)
+        });
+        
+        return data.results;
+    } catch (err) {
+        return Promise.reject(err);
+    }
+}
+
+exports.getDataConf = async(param) => {
+    const queryDataConf = {
+        query: `PREFIX data: <http://example.com>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        
+        SELECT ?asalBerangkat (SUM(IF(?status = 'Positif', 1, 0)) AS ?jumlahPositif) (SUM(IF(?status = 'Negatif', 1, 0)) AS ?jumlahNegatif)
+        
+        WHERE {
+            ?any rdf:type data:patient;
+                data:asalBerangkat ?asalBerangkat;
+                data:status ?status;
+        }
+        GROUP BY ?asalBerangkat
+        `
+    }
+
+    try {
+        const { data } = await axios(`${BASE_URL}imitracov/query`, {
+            method: 'POST',
+            headers,
+            data: qs.stringify(queryDataConf)
         });
         
         return data.results;

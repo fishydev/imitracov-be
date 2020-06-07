@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { getData } = require('../controllers/patient.controller')
+const { getData, getDataGuest, getDataConf } = require('../controllers/patient.controller')
 
 router.get('/', (req, res) => {
     res.status(200).json({
@@ -11,5 +11,9 @@ router.get('/', (req, res) => {
 })
 
 router.get('/patient', getData)
+
+router.get('/stats', getDataGuest)
+
+router.get('/conf', getDataConf)
 
 module.exports = router
